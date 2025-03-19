@@ -899,6 +899,8 @@ void PlotWidget::resampleCurves(int axis_id)
     {
         if (curve.isNull()) continue;
 
+        if (!curve->isVisible()) continue;
+
         int axis = curve->yAxis();
 
         if (axis == QwtPlot::yLeft && !axis_left)
